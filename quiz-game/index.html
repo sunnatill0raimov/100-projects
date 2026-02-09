@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quiz game</title>
+	<!-- Style link -->
+	<link rel="stylesheet" href="style.css">
+	<!-- JavaScript link -->
+	<script type="module" src="script.js" defer></script>
+</head>
+
+<body>
+	<div class="container">
+
+		<div class="screen active" id="start-screen">
+			<h1>Quiz time!</h1>
+			<p> Test your knowladge with these fun questions </p>
+			<button id="start-btn">Start Quiz</button>
+		</div>
+
+		<div class="screen" id="quiz-screen">
+
+			<div class="quiz-header">
+				<h2 id="question-text">Questions</h2>
+			</div>
+
+			<div class="quiz-info">
+
+				<p>Questions <span id="current-questions">0</span> of <span id="total-question">5</span></p>
+
+				<p>Score: <span id="score">0</span></p>
+			</div>
+
+			<div class="answer-container" id="answer-container">
+				<!-- Answer button will be in js -->
+			</div>
+
+			<div class="progress-bar">
+				<div id="progress" class="progress"></div>
+			</div>
+		</div>
+
+		<div class="screen" id="result-screen">
+			<h1>Quiz Results</h1>
+			<div class="result-info">
+				<p>You scores <span id="final-score"> out of <span id="max-score">5</span></span></p>
+
+				<div id="result-message">Good job!</div>
+			</div>
+			<button id="restart-btn">Restart Quiz</button>
+		</div>
+
+	</div>
+</body>
+
+</html>
