@@ -1,0 +1,210 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "POPPINS", sans-serif;
+}
+
+body {
+	background: #f4f6fb;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	min-height: 100vh;
+	padding: 30px 10px;
+}
+
+/* ✅ Container desktopda kattaroq */
+.contianer {
+	background: #fff;
+	width: 100%;
+	max-width: 900px; /* oldin 420px edi */
+	padding: 25px;
+	border-radius: 14px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 20px;
+	color: #333;
+}
+
+/* Balance section */
+.balance-container {
+	background: linear-gradient(135deg, #5f6cff, #7b86ff);
+	text-align: center;
+	color: #fff;
+	padding: 18px;
+	border-radius: 12px;
+	margin-bottom: 20px;
+}
+
+.balance-container h3 {
+	font-weight: normal;
+	opacity: 0.9;
+}
+
+.balance-container h2 {
+	margin: 10px 0 15px;
+	font-size: 28px;
+}
+
+.balance-info {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.balance-info div {
+	padding: 10px 14px;
+	border-radius: 8px;
+	width: 100%;
+	background-color: #fff;
+}
+
+.income {
+	color: #6bc76b;
+}
+
+.expenses {
+	color: #ce6c6c;
+}
+.balance-info p {
+	font-size: 13px;
+	opacity: 0.85;
+}
+
+.balance-info span {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+/* ✅ Desktopda 2 ustun ko‘rinish: Transaction + Form yonma-yon */
+@media (min-width: 900px) {
+	.transaction-container {
+		display: flex;
+		gap: 20px;
+		align-items: flex-start;
+	}
+
+	.transactions {
+		width: 55%;
+	}
+
+	.add-transaction {
+		width: 45%;
+	}
+
+	.contianer {
+		padding: 40px 50px;
+	}
+}
+
+/* Transactions */
+.transactions {
+	margin-bottom: 20px;
+
+	/* ✅ Scroll bo‘lishi uchun */
+	max-height: 260px;
+	overflow-y: auto;
+	padding-right: 6px; /* scrollbar joyi */
+}
+
+/* ✅ Scroll style (chiroyli) */
+.transactions::-webkit-scrollbar {
+	width: 6px;
+}
+.transactions::-webkit-scrollbar-thumb {
+	background: #c5c9ff;
+	border-radius: 10px;
+}
+.transactions::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.check {
+	display: flex;
+	justify-content: space-between;
+	background: #f7f8ff;
+	padding: 12px 14px;
+	border-radius: 8px;
+	margin-bottom: 10px;
+}
+
+.check p {
+	color: #333;
+}
+
+.check span {
+	font-weight: bold;
+}
+
+/* Form */
+.add-transaction form {
+	display: flex;
+	flex-direction: column;
+	background: #fbfbff;
+	padding: 15px;
+	border-radius: 12px;
+	border: 1px solid #eef0ff;
+}
+
+.add-transaction label {
+	margin-top: 10px;
+	margin-bottom: 4px;
+	font-size: 14px;
+	color: #444;
+}
+
+.add-transaction input {
+	padding: 10px;
+	border-radius: 7px;
+	border: 1px solid #ddd;
+	outline: none;
+	transition: 0.2s;
+}
+
+.add-transaction input:focus {
+	border-color: #5f6cff;
+	box-shadow: 0 0 0 2px rgba(95, 108, 255, 0.15);
+}
+
+.add-transaction span {
+	font-size: 12px;
+	margin-top: 6px;
+	color: #888;
+}
+
+button {
+	margin-top: 14px;
+	padding: 11px;
+	border: none;
+	border-radius: 8px;
+	background: #5f6cff;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+button:hover {
+	background: #4b55e6;
+}
+
+/* Responsive (telefon uchun) */
+@media (max-width: 480px) {
+	.contianer {
+		padding: 18px;
+	}
+
+	.balance-container h2 {
+		font-size: 24px;
+	}
+
+	.transactions {
+		max-height: 220px;
+	}
+}

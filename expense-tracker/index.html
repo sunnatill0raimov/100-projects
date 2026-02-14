@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Expende Tracker</title>
+	<!-- Style link -->
+	<link rel="stylesheet" href="./style.css">
+	<!-- Script link -->
+	<script src="script.js" defer></script>
+</head>
+
+<body>
+
+	<div class="contianer">
+		<h1>Expense Tracker</h1>
+
+		<div class="balance-container">
+			<h3>Your Balance</h3>
+			<h2 id="balance_id">$0,000,000</h2>
+
+			<div class="balance-info">
+				<div class="income">
+					<p>Income</p>
+					<span id="income_id">$0,000,00</span>
+				</div>
+				<div class="expenses">
+					<p>Expenses</p>
+					<span id="expenses_id">$0,000,000</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="transaction-container">
+
+			<div class="transactions" id="transactions">
+				<h2>Transactions</h2>
+			</div>
+	
+			<div class="add-transaction">
+				<form id="transactionForm">
+					<label>Description</label>
+					<input type="text" name="descr" id='description'placeholder="Enter description...">
+					<label>Amount</label>
+					<input type="text" id="amount" name="amount" placeholder="Enter amount">
+					<span>Use negative (-) for expenses</span>
+					<button type="submit">Add Transaction</button>
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
