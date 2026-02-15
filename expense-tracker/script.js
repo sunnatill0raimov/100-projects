@@ -45,7 +45,7 @@ function renderTransactionsList() {
 		check.classList.add('check')
 		check.innerHTML = `
 			<p>${transaction.descr}</p>
-			<span>$${formatCurrency(transaction.amount)}</span>
+			<span>${formatCurrency(transaction.amount)}</span>
 		`
 
 		if (transaction.amount > 0) {
