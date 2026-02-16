@@ -82,6 +82,13 @@ h1 {
 	font-size: 16px;
 }
 
+.delete-btn {
+	background-color: #ce6c6c;
+}
+
+.delete-btn:hover {
+	background-color: #ce6c6cb3;
+}
 /* ✅ Desktopda 2 ustun ko‘rinish: Transaction + Form yonma-yon */
 @media (min-width: 900px) {
 	.transaction-container {

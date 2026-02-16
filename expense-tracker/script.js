@@ -46,7 +46,11 @@ function renderTransactionsList() {
 		check.innerHTML = `
 			<p>${transaction.descr}</p>
 			<span>${formatCurrency(transaction.amount)}</span>
+			<button class="delete-btn">✖️</button>
 		`
+
+		const deleteBtn = check.querySelector(".delete-btn")
+		.addEventListener('click', () => deleteTransaction(transaction.id))
 
 		if (transaction.amount > 0) {
 			check.style.borderLeft = ' 5px solid #6bc76b'
@@ -82,6 +86,15 @@ function formatCurrency(number) {
 		style: 'currency',
 		currency: 'UZB',
 	}).format(number)
+}
+
+function deleteTransaction(id){
+	 elements.transactions = elements.transactions.filter(transaction => transaction.id != id)
+
+	localStorage.setItem('transactions', JSON.stringify(elements.transactions))
+
+	renderTransactionsList()
+	renderAllBalance()
 }
 
 renderAllBalance()
