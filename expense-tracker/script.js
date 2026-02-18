@@ -7,6 +7,10 @@ const elements = {
 	transactions: JSON.parse(localStorage.getItem('transactions')) || [],
 }
 
+const navbarElements = {
+	navbarBtn: document.querySelectorAll('.footerNavbar-container button'),
+}
+
 elements.transactionForm.addEventListener('submit', addTransaction)
 
 function addTransaction(e) {
@@ -44,13 +48,14 @@ function renderTransactionsList() {
 		const check = document.createElement('div')
 		check.classList.add('check')
 		check.innerHTML = `
-			<p>${transaction.descr}</p>
+			<p>${transaction.descr} :</p>
 			<span>${formatCurrency(transaction.amount)}</span>
 			<button class="delete-btn">✖️</button>
 		`
 
-		const deleteBtn = check.querySelector(".delete-btn")
-		.addEventListener('click', () => deleteTransaction(transaction.id))
+		const deleteBtn = check
+			.querySelector('.delete-btn')
+			.addEventListener('click', () => deleteTransaction(transaction.id))
 
 		if (transaction.amount > 0) {
 			check.style.borderLeft = ' 5px solid #6bc76b'
@@ -88,8 +93,10 @@ function formatCurrency(number) {
 	}).format(number)
 }
 
-function deleteTransaction(id){
-	 elements.transactions = elements.transactions.filter(transaction => transaction.id != id)
+function deleteTransaction(id) {
+	elements.transactions = elements.transactions.filter(
+		transaction => transaction.id != id,
+	)
 
 	localStorage.setItem('transactions', JSON.stringify(elements.transactions))
 
@@ -99,3 +106,13 @@ function deleteTransaction(id){
 
 renderAllBalance()
 renderTransactionsList()
+
+// navbar
+navbarElements.navbarBtn.forEach(btn => {
+	btn.addEventListener('click', () => {
+		document
+			.querySelectorAll('.footerNavbar-container button')
+			.forEach(b => b.classList.remove('active'))
+		btn.classList.add('active')
+	})
+})

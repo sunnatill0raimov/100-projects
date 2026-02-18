@@ -1,33 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Expende Tracker</title>
+	<title>Xarajatlar Kuzatuvchisi</title>
+
 	<!-- Style link -->
 	<link rel="stylesheet" href="./style.css">
+
 	<!-- Script link -->
 	<script src="script.js" defer></script>
+
+	<!-- Fonst awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+		integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
 
-	<div class="contianer">
-		<h1>Expense Tracker</h1>
-
+	<div class="container">
 		<div class="balance-container">
-			<h3>Your Balance</h3>
-			<h2 id="balance_id">$0,000,000</h2>
+			<h3>Umumiy balans</h3>
+			<h2 id="balance_id">0 so‘m</h2>
 
 			<div class="balance-info">
 				<div class="income">
-					<p>Income</p>
-					<span id="income_id">$0,000,00</span>
+					<p>Kirim</p>
+					<span id="income_id">0 so‘m</span>
 				</div>
 				<div class="expenses">
-					<p>Expenses</p>
-					<span id="expenses_id">$0,000,000</span>
+					<p>Chiqim</p>
+					<span id="expenses_id">0 so‘m</span>
 				</div>
 			</div>
 		</div>
@@ -35,21 +40,45 @@
 		<div class="transaction-container">
 
 			<div class="transactions" id="transactions">
-				<h2>Transactions</h2>
+				<h2>Tranzaksiyalar</h2>
 			</div>
-	
+
 			<div class="add-transaction">
 				<form id="transactionForm">
-					<label>Description</label>
-					<input type="text" name="descr" id='description'placeholder="Enter description...">
-					<label>Amount</label>
-					<input type="text" id="amount" name="amount" placeholder="Enter amount">
-					<span>Use negative (-) for expenses</span>
-					<button type="submit">Add Transaction</button>
+					<label>Tavsif</label>
+					<input type="text" name="descr" id="description" placeholder="Tavsif kiriting...">
+
+					<label>Miqdor</label>
+					<input type="text" id="amount" name="amount" placeholder="Miqdor kiriting">
+
+					<span>Xarajatlar uchun minus (-) qo‘ying</span>
+
+					<button type="submit">Tranzaksiya qo‘shish</button>
 				</form>
 			</div>
+
 		</div>
 
+	</div>
+
+	<div class="footerNavbar-container">
+
+		<button class="home-btn" id="home-btn">
+			<i class="fa-solid fa-house"></i>
+		</button>
+
+		<button class="add-transaction-btn" id="add-transaction-btn">
+			<i class="fa-solid fa-circle-plus"></i>
+		</button>
+
+		<button class="transaction-btn" id="transaction-btn">
+			<i class="fa-solid fa-list"></i>
+		</button>
+
+
+		<button class="reports-btn" id="reports-btn">
+			<i class="fa-solid fa-chart-pie"></i>
+		</button>
 	</div>
 
 </body>
